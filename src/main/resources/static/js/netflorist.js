@@ -16,6 +16,9 @@ netFloristModule.config(["$routeProvider","$locationProvider",function($routePro
    }).when('/adminHomePage',{
        templateUrl :'/adminHomePage.html',
        controller : 'ProductController'
+   }).when('/SupplierHomePage',{
+       templateUrl :'/SupplierHomePage.html',
+       controller : 'ProductController'      
    }).when('/addCategory',{
        templateUrl :'/addCategory.html',
        controller : 'CategoryController'
@@ -54,6 +57,9 @@ netFloristModule.controller("RegisterController",['$scope','$http',function($sco
            
             if(num === '1'){
                 role = "Admin";
+            }
+            if(num === '2'){
+                role = "Supplier";
             }
            
             var user = {
@@ -127,6 +133,11 @@ netFloristModule.controller("LoginController",function($scope,$http){
                                {
                                  userId = response.data.userID;
                                  window.location = './adminHomePage.html?userId=' + userId;
+                               }
+                               else if(response.data.role === "Supplier")
+                               {
+                                 userId = response.data.userID;
+                                 window.location = './SupplierHomePage.html?userId=' + userId;
                                }
 		        }).catch(function(error){
                             alert(error.data.message);

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html vlang="en-US" ng-app="NetFloristAppSystem">
+    <head>
+        <title>Supplier</title>
+        <script src="./js/angular.js"></script>
+        <script type="text/javascript" src="./js/angular-route.min.js"></script>
+        <script src="./js/netflorist.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/netflorist.css" />
+        <link rel="stylesheet" type="text/css" href="./css/menus.css" />
+        <link rel="stylesheet" type="text/css" href="./css/table.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>       
+    </head>
+
+    <body ng-controller="ProductController">
+        
+       <p style="float: right">Need Help? Contact us <strong>08361300600</strong></p>
+        <img src="./css/logo.png" style="width:150;height:50;" />
+            <img src="./css/regbar1.jpg" style="float: right"/>
+    
+       <ul style="background-color: #CD5C5C">
+              <li><a href="#home">{{user.name}} {{user.surname}}</a></li>
+               
+               <li><a href="./login.html">Log Out</a></li>
+            </ul>
+  
+          <!--Search Box-->  
+        <input type="text" ng-model="searchText.name" onkeyup="" placeholder="Search For Products.." style="width:20%;  padding: 12px 20px;  margin: 8px 0;box-sizing: border-box;}"/>
+              <table id="tbl">
+               <tr>
+                  <th>Product Name</th>
+                   <th>Product Category</th>
+                   <th>Product Price</th>
+                   <th>Product Image</th>
+               </tr>
+                <!--displays items on database and search using filter in the database-->
+               <tr ng-repeat="product in products | filter:searchText" >
+                   <td>{{product.name}}</td>
+                   <td>{{product.category}}</td>
+                   <td>R:{{product.price}}</td>
+                   <td><span><img ng-src="{{product.image}}" width="250" height="250" alt=""/></span></td>
+                   <td>
+                       
+                   </td>
+               </tr>
+           </table>
+
+    </body>
+</html>
