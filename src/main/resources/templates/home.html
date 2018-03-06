@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html vlang="en-US" ng-app="NetFloristAppSystem" >
+    <head>
+        <title>home</title>
+        <script src="./js/angular.js"></script>
+        <script type="text/javascript" src="./js/angular-route.min.js"></script>
+	<script src="./js/netflorist.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/netflorist.css" />
+        <link rel="stylesheet" type="text/css" href="./css/netfloriststyle.css" />
+        <link rel="stylesheet" type="text/css" href="./css/table.css" />
+    </head>
+   
+    <body  ng-controller="ProductController">
+        
+         <img src="./css/logo.png" style="width:150;height:50;" />
+         <img src="./css/regbar1.jpg"/>
+         <div style="letter-spacing:4px; float: right" >
+          <a href="/login">log-on</a>
+           <a href="/register" >register</a>   
+        </div>
+        
+         
+          <!--Search products using name-->
+         <input type="text" ng-model="searchText.name" onkeyup="" placeholder="Search For Products.." style="width:20%;  padding: 12px 20px;  margin: 8px 0;box-sizing: border-box;}"/>
+         
+         <!--Category tab-->
+         <div class ="tab"> 
+                     <button class="tablinks" ng-click="searchCategory(event,catss.name)" ng-repeat="catss in categories"> {{catss.name}} </button>
+         </div>
+        
+         <!--List of table-->
+              <table id="tbl">
+               <tr>
+                  <th>Product Name</th>
+                   <th>Product Category</th>
+                   <th>Product Price</th>
+                   <th>Product Image</th>
+               </tr>
+                <!--gets from angualr to table and uses filter to search products-->
+               <tr ng-repeat="product in products  | filter:searchText" >
+                   <td>{{product.name}}</td>
+                   <td>{{product.category}}</td>
+                   <td>R:{{product.price}}</td>
+                   <td><span><img ng-src="{{product.image}}" width="250" height="250" alt=""/></span></td>
+               </tr>
+           </table>
+    </body>
+</html>
+

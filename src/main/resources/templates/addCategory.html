@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="NetFloristAppSystem">
+<head>
+    <title>Add-Category</title>
+    <script src="./js/angular.js"></script>
+    <script type="text/javascript" src="./js/angular-route.min.js"></script>
+    <script src="./js/netflorist.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/netflorist.css" />
+    <link rel="stylesheet" type="text/css" href="./css/netfloriststyle.css" />
+    <link rel="stylesheet" type="text/css" href="./css/menus.css" />
+</head>
+
+<body  ng-controller="CategoryController">
+
+<p style="float: right">Need Help? Contact us <strong>08361300600</strong></p>
+<img src="./css/logo.png" style="width:150;height:50;" />
+<img src="./css/regbar1.jpg" style="float: right"/>
+
+<div class="container" >
+  <ul style="background-color: #CD5C5C">
+
+    <li><a href="./adminHomePage.html">Home</a></li>
+    <li><a href="./addProduct.html">Add Product</a></li>
+    <li><a href="./updateProduct.html">Update Product</a></li>
+    <li><a href="./registerAdmin.html">Add Admin</a></li>
+    <li><a href="./viewOrders.html">View Orders</a></li>
+    <li><a href="./login.html">Log Out</a></li>
+</ul>
+
+    <div id="container_imp" style="float: left">
+        <a class="hiddenanchor" id="toregister"></a>
+        <div id="wrapper">
+        <form name="addCat"> 
+            <img src="./css/category.png" style="width:150;height:50; " />
+
+                <p> 
+                    <label for="cName" class="pName" >Category Name:</label>
+                    <input id="cName" ng-model="name" name="cName" required="required" type="text" />
+                </p>
+
+                <p class="signin button"> 
+                    <input type="submit" ng-click="saveCategory()" value="Save Category"/> 
+                </p>
+
+                <p class="signin button"> 
+                    <input type="submit" ng-click="removeCategory()" value="Remove Category"/> 
+                </p>
+
+</form>
+</div>  
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="NetFloristAppSystem">
+    <head>
+        <title>Administrator-Register</title>
+        <script src="./js/angular.js"></script>
+        <script type="text/javascript" src="./js/angular-route.min.js"></script>
+	<script src="./js/netflorist.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/netflorist.css" />
+        <link rel="stylesheet" type="text/css" href="./css/netfloriststyle.css" />
+        <link rel="stylesheet" type="text/css" href="./css/menus.css" />
+    </head>
+    
+        <body  ng-controller="RegisterController">
+            
+      <p style="float: right">Need Help? Contact us <strong>08361300600</strong></p>
+        <img src="./css/logo.png" style="width:150;height:50;" />
+            <img src="./css/regbar1.jpg" style="float: right"/>
+           
+            <div class="container" >
+               <ul style="background-color: #CD5C5C">
+                   
+                    <li><a href="#home">{{user.name}} {{user.surname}}</a></li>
+                    <li><a href="./adminHomePage.html">Admin Home</a></li>
+                    <li><a href="./addProduct.html">Add Product</a></li>
+                    <li><a href="./updateProduct.html">Update Product</a></li>
+                    <li><a href="./addCategory.html">Add Category</a></li>
+                    <li><a href="./registerAdmin.html">Add Admin</a></li>
+                    <li><a href="./viewOrders.html">View Orders</a></li>
+                    <li><a href="./login.html">Log Out</a></li>
+                </ul>
+                
+                <div id="container_imp">
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <div id="wrapper">
+                    <form name="updateProduct">
+                        <h1 style="color: #BEBEBE;">Administrator Registration</h1>
+                   
+                                <p> 
+                                    <label for="firstName" class="fName" data-icon="u">Admin First Name:</label>
+                                    <input id="firstName" ng-model="fname" name="firstName" required="required" type="text" placeholder="Enter First Name" />
+                                </p>
+                                
+                                <p> 
+                                    <label for="lastName" class="lName" data-icon="u">Admin Last Name:</label>
+                                    <input id="lastName" ng-model="lname" name="lastName" required="required" type="text" placeholder="Enter Last Name" />
+                                </p>
+                                
+                                <p> 
+                                    <label for="emailsignup" class="youmail" data-icon="e" >Admin Email Address:</label>
+                                    <input id="emailsignup" ng-model="email" name="emailsignup" type="email" placeholder="email@gmail.com"/> 
+                                </p>
+                                
+                                <p> 
+                                    <label for="cellNo" class="yourCell" data-icon="u">Admin cell Number: </label>
+                                    <input id="cellNo" ng-model="mobileNo" name="cellNo" required="required" type="text" placeholder="Enter Mobile No"/>
+                                </p>
+                                
+                                <p> 
+                                    <label for="passwordsignup" class="youpasswd" data-icon="p">Admin Your password: </label>
+                                    <input id="passwordsignup" ng-model="password" name="passwordsignup" required="required" type="password" placeholder="Enter password"/>
+                                </p>
+                                
+                                <p class="signin button"> 
+                                    <input type="submit" ng-click="registerUsers('1')" value="Sign up"/> 
+				</p>
+                     </form>
+               </div>  
+          </div>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="NetFloristAppSystem">
+    <head>
+        <title>Add-Product</title>
+        <script src="./js/angular.js"></script>
+        <script type="text/javascript" src="./js/angular-route.min.js"></script>
+	<script src="./js/netflorist.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/netflorist.css" />
+        <link rel="stylesheet" type="text/css" href="./css/netfloriststyle.css" />
+        <link rel="stylesheet" type="text/css" href="./css/menus.css" />
+    </head>
+    
+<body  ng-controller="AddProductController">
+            
+    <p style="float: right">Need Help? Contact us <strong>08361300600</strong></p>
+        <img src="./css/logo.png" style="width:150;height:50;" />
+          <img src="./css/regbar1.jpg" style="float: right"/>
+           
+<div class="container" >
+    <ul style="background-color: #CD5C5C">
+        <li><a href="#home">{{users.fname}} {{users.lname}}</a></li>
+        <li><a href="./adminHomePage.html">Admin Home</a></li>
+        <li><a href="./addCategory.html">Add Category</a></li>
+        <li><a href="./updateProduct.html">Update Product</a></li>
+         <li><a href="./registerAdmin.html">Add Admin</a></li>
+        <li><a href="./viewOrders.html">View Orders</a></li>
+         <li><a href="./login.html">Log Out</a></li>
+    </ul>
+
+    <div id="container_imp" style="float: left" >
+        <a class="hiddenanchor" id="toregister"></a>
+        <div id="wrapper">
+<form name="addproduct"> 
+    <img src="./css/products.png" style="width:150;height:50; " />
+          <p> 
+                <label for="pName" class="pName" >Product Name:</label>
+                <input id="pName" ng-model="name" name="pName" required="required" type="text" />
+            </p>
+
+           <p> 
+                <label for="pCat" class="pCat"  > Product Category:</label>
+                <select name="pCat" id="pCat" ng-model="category">
+                    <option ng-repeat="cat in categories" value="{{cat.name}}">{{cat.name}} </option>
+                </select>
+           </p>    
+
+            <p> 
+                <label for="productPrice" class="yourPrice" >Product Price: </label>
+                <input id="productPrice" ng-model="price" name="productPrice" required="required" type="text" />
+            </p>
+
+             <p> 
+                <label for="productImage" class="productImage" >Product Image: </label>
+                <input id="productImage" ng-model="image"  required="required" type="file" accept="image/png/jpeg" />
+            </p>
+
+            <p class="signin button"> 
+                <input type="submit" ng-click="create()" value="Save Product"/> 
+            </p>
+             </form>
+        </div>  
+    </div>
+</div>
+</body>
+</html>
