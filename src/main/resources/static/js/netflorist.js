@@ -16,9 +16,6 @@ netFloristModule.config(["$routeProvider","$locationProvider",function($routePro
    }).when('/adminHomePage',{
        templateUrl :'/adminHomePage.html',
        controller : 'ProductController'
-   }).when('/SupplierHomePage',{
-       templateUrl :'/SupplierHomePage.html',
-       controller : 'ProductController'      
    }).when('/addCategory',{
        templateUrl :'/addCategory.html',
        controller : 'CategoryController'
@@ -47,7 +44,6 @@ netFloristModule.config(["$routeProvider","$locationProvider",function($routePro
 
 
 netFloristModule.controller("RegisterController",['$scope','$http',function($scope,$http){
-    //makes request using https to the server and return a respose which in this case is json data
     $http.defaults.headers.post["Content-Type"] = "application/json";  
           
         // Registering a customer with a role of customer and user with a role of user
@@ -57,9 +53,6 @@ netFloristModule.controller("RegisterController",['$scope','$http',function($sco
            
             if(num === '1'){
                 role = "Admin";
-            }
-            if(num === '2'){
-                role = "Supplier";
             }
            
             var user = {
@@ -79,7 +72,7 @@ netFloristModule.controller("RegisterController",['$scope','$http',function($sco
                         {
                             if(user.password !== undefined)
                             {
-                               
+                               // console.log(user);
                                 $http.post('/user/register',user).then(function(response) {
                                         
                                         if(response.data.userID !== 0)
@@ -133,11 +126,6 @@ netFloristModule.controller("LoginController",function($scope,$http){
                                {
                                  userId = response.data.userID;
                                  window.location = './adminHomePage.html?userId=' + userId;
-                               }
-                               else if(response.data.role === "Supplier")
-                               {
-                                 userId = response.data.userID;
-                                 window.location = './SupplierHomePage.html?userId=' + userId;
                                }
 		        }).catch(function(error){
                             alert(error.data.message);

@@ -48,12 +48,6 @@ public class NetFloristMasterPageController {
         return "adminHomePage";
     }
     
-    @RequestMapping(value = "/SupplierHomePage", method = RequestMethod.GET)
-    public String SupplierPage()
-    {
-        return "SupplierHomePage";
-    }
-    
     @RequestMapping(value = "/addCategory", method = RequestMethod.GET)
     public String addCategory()
     {

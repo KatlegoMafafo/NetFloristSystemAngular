@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="NetFloristAppSystem">
+    <head>
+        <title>Delivery</title>
+        <script src="./js/angular.js"></script>
+        <script type="text/javascript" src="./js/angular-route.min.js"></script>
+	<script src="./js/netflorist.js"></script>
+        <link rel="stylesheet" type="text/css" href="./css/netflorist.css" />
+        <link rel="stylesheet" type="text/css" href="./css/menus.css" />
+         <link rel="stylesheet" type="text/css" href="./css/table.css" /> 
+    </head>
+    
+    <body ng-controller="AddressController">
+        
+      <p style="float: right">Need Help? Contact us <strong>08361300600</strong></p>
+        <img src="./css/logo.png" style="width:150;height:50;" />
+            <img src="./css/regbar1.jpg" style="float: right"/>
+          
+            <!--List Menue-->
+        <div >
+            <ul style="background-color: #CD5C5C;">
+                <li><a href="./driverHomePage.html">Delivery Home </a></li>
+               <li><a href="./login.html">Log Out</a></li>
+            </ul>
+            
+            <!--Search box-->
+           <input type="text" id="myInput" onkeyup="" placeholder="Search For Delivery.." style="width:20%;  padding: 12px 20px;  margin: 8px 0;box-sizing: border-box;}"/>
+           
+           <!-- Table elements-->
+           <table id="tbl">
+               <tr>
+                  
+                  
+                  <th>Customer Name</th>
+                  <th>Customer Surname</th>
+                  <th>Contact Numbers</th>
+                  <th>Email</th>
+                  <th>Address Type</th>
+               <!--   <td>Province</td> -->
+                  <th>Street Name</th>
+                  <th>City</th>
+                  <th>Order Number</th>
+                   
+                   
+                  
+                  
+               </tr>
+               <!-- gets from database-->
+               <tr ng-repeat="addreses in address | filter:searchText" >
+                   
+                   
+                    <td>{{addreses.name}}</td>
+                    <td>{{addreses.surname}}</td>
+                   <td> {{addreses.contacts}}</td>
+                   <td>{{addreses.email}}</td>
+                   <td>{{addreses.addresstype}}</td>
+                <!--   <td>{{address.province}}</td> -->
+                   <td>{{addreses.street}}</td>
+                   <td>{{addreses.city}}</td>
+                   <td>{{addreses.orderno}}</td>
+                </tr>
+           </table>
+        </div>
+   </body>
+</html>
+
+    
+
